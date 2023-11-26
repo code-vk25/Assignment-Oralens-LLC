@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Encryption Demo</title>
+</head>
+<body>
+    <h1>Simple Encryption Demo</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Diagnosis</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in data %}
+                <tr>
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.name }}</td>
+                    <td>{{ record.age }}</td>
+                    <td>{{ record.gender }}</td>
+                    <td>{{ record.phone }}</td>
+                    <td>{{ record.diagnosis }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="/encrypt" method="post">
+        <input type="submit" value="Encrypt">
+    </form>
+
+    <form action="/decrypt" method="post">
+        <input type="submit" value="Decrypt">
+    </form>
+</body>
+</html>
